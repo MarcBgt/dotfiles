@@ -23,6 +23,14 @@ for name in *; do
   fi
 done
 
+# Claude Code skills
+mkdir -p "$HOME/.claude"
+backup "$HOME/.claude/skills"
+if [ ! -e "$HOME/.claude/skills" ]; then
+  echo "-----> Symlinking your new $HOME/.claude/skills"
+  ln -s "$PWD/claude/skills" "$HOME/.claude/skills"
+fi
+
 REGULAR="\\033[0;39m"
 YELLOW="\\033[1;33m"
 GREEN="\\033[1;32m"
